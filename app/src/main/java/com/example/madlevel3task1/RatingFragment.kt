@@ -31,10 +31,20 @@ class RatingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        showRandomAssessableGame()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showRandomAssessableGame() {
+        val randomGame = listOf(
+            "Red Dead Redemption 2", "Rocket League", "Shadow of the Tombraider"
+        ).random()
+
+        binding.tvGameName.text = randomGame
     }
 }
