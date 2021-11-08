@@ -23,6 +23,11 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding.btnStart.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_startFragment_to_ratingFragment
+            )
+        }
 
         _binding = FragmentStartBinding.inflate(inflater, container, false)
         return binding.root
